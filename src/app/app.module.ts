@@ -10,14 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { playerReducer } from './store/reducers/player.reducer';
+import { TimeTransformPipe } from './shared/pipes/time-transform.pipe';
 
 registerLocaleData(zh);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TimeTransformPipe
   ],
   imports: [
     BrowserModule,

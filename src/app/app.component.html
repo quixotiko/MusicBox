@@ -14,8 +14,9 @@
                         <span class="artist-name" *ngFor="let artist of songList[currentIndex]?.artist">{{artist?.name}}</span>
                     </div>
                     <div class="progress">
-                        <div class="progressbar">
-                            时间
+                        <div class="progressbar" #progressBar>
+                            <span class="dot" #dot [ngStyle]="dotStyle"></span>
+                            -{{currentTime| timeTransform}}
                         </div>
                         <div class="pic">
                             <img [src]="songList[currentIndex]?.imgUrl" *ngIf="songList[currentIndex]" [ngClass]="{'rotate': !isPaused}">
@@ -29,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <audio  #audio></audio>
+        <audio #audio></audio>
     </div>
     <div class="content" #content>
         <div class="nav">

@@ -5,4 +5,5 @@ export const setPlaying = createAction('[player] Set Playing', props<{isPaused: 
 export const setSongList = createAction('[player] Set SongList', props<{songList: Song[]}>());
 export const setCurrentIndex = createAction('[player] Set CurrentIndex', props<{currentIndex: number}>());
 export const setSongListName = createAction('[player] Set SongListName', props<{songListName: string}>());
+export const setCurrentTime = createAction('[player] Set CurrentTime', props<{currentTime: number}>());
 
