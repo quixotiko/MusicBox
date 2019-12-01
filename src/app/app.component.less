@@ -1,4 +1,28 @@
 @viewport-width: 100vw;
+@-webkit-keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-moz-keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .stretch {
     height: 80vh;
@@ -46,6 +70,7 @@
                     margin-bottom: -20px;
                     .song-name {
                         font-size: 1.6rem;
+                        margin-right: 16px;
                     }
                     .artist-name {
                         font-size: 1rem;
@@ -69,13 +94,27 @@
                         min-width: 100px;
                         height: calc(@viewport-width * 0.12);
                         min-height: 100px;
-                        background-color: yellow;
+                        background-color: white;
                         border-radius: 50%;
+                        img {
+                            &.rotate {
+                                -webkit-animation: rotate 10s linear infinite;
+                                animation: rotate 10s linear infinite;
+                                -moz-animation: rotate 10s linear infinite;
+
+                            }
+                            width: calc(@viewport-width * 0.12);
+                            min-width: 100px;
+                            height: calc(@viewport-width * 0.12);
+                            min-height: 100px;
+                            border-radius: 50%;
+                        }
                     }
                 }
                 .handle {
                     font-size: 1.8rem;
                     margin-top: -10px;
+                    transition: all 1s ease-in-out;
                     i {
                         cursor: pointer;
                         margin-right: 8%;
@@ -132,7 +171,7 @@
                     .song-name {
                         font-size: 1rem;
                         &:after {
-                            content: "—";
+                            content: "-";
                             display: inline-block;
                         }
                     }
@@ -152,12 +191,14 @@
                         padding-top: 2px;
                     }
                     .pic {
-                        position: absolute;
-                        top: 0;
-                        transform: translateX(50vw);
-                        transition: all 0.5s ease-in-out;
-                        width: 0;
-                        height: 0;
+                        img {
+                            position: absolute;
+                            top: 0;
+                            transform: translateX(50vw);
+                            transition: all 0.5s ease-in-out;
+                            width: 0;
+                            height: 0;
+                        }
                     }
                 }
                 .handle {

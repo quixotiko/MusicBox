@@ -7,29 +7,29 @@
             <div class="panel">
                 <div class="info">
                     <div class="album">
-                        <span>专辑名</span>
+                        <span>{{songListName}}</span>
                     </div>
                     <div class="name">
-                        <span class="song-name">{{songName}}</span>
-                        <span class="artist-name">歌手</span>
+                        <span class="song-name">{{songList[currentIndex]?.name}}</span>
+                        <span class="artist-name" *ngFor="let artist of songList[currentIndex]?.artist">{{artist?.name}}</span>
                     </div>
                     <div class="progress">
                         <div class="progressbar">
                             时间
                         </div>
                         <div class="pic">
-
+                            <img [src]="songList[currentIndex]?.imgUrl" *ngIf="songList[currentIndex]" [ngClass]="{'rotate': !isPaused}">
                         </div>
                     </div>
                     <div class="handle">
-                        <i nz-icon nzType="step-backward" nzTheme="outline"></i>
-                        <i nz-icon nzType="pause" nzTheme="outline"></i>
-                        <i nz-icon nzType="step-forward" nzTheme="outline"></i>
+                        <i nz-icon nzType="step-backward" nzTheme="outline" *ngIf="showPrevButton" (click)="onPrev($event)"></i>
+                        <i nz-icon [nzType]="isPaused ? 'caret-right' : 'pause'" nzTheme="outline" (click)="onPlay($event)"></i>
+                        <i nz-icon nzType="step-forward" nzTheme="outline" (click)="onNext($event)"></i>
                     </div>
                 </div>
             </div>
         </div>
-        <audio src="" autoplay></audio>
+        <audio  #audio></audio>
     </div>
     <div class="content" #content>
         <div class="nav">
