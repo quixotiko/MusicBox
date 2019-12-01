@@ -6,4 +6,5 @@ export const setSongList = createAction('[player] Set SongList', props<{songList
 export const setCurrentIndex = createAction('[player] Set CurrentIndex', props<{currentIndex: number}>());
 export const setSongListName = createAction('[player] Set SongListName', props<{songListName: string}>());
 export const setCurrentTime = createAction('[player] Set CurrentTime', props<{currentTime: number}>());
+export const setIsNew = createAction('[player] Set IsNew', props<{isNew: boolean}>());
 

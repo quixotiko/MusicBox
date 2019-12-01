@@ -1,5 +1,5 @@
 <div class="container">
-    <img [src]="imgUrl" alt="图片">
+    <img [src]="imgUrl" alt="图片" (click)="addList()">
     <div class="name">{{name}}</div>
     <div class="tag"><span *ngFor="let tag of tags">{{tag}}/</span></div>
 </div>

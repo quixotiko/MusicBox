@@ -2,8 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SongsheetService } from './services/songsheet.service';
 import { Song } from './services/common.types';
 import { Store, select } from '@ngrx/store';
-import { setSongList, setPlaying, setCurrentIndex, setCurrentTime } from './store/actions/player.action';
-import { getSongList, getSongListName, getPlaying, getCurrentIndex, getCurrentTime } from './store/selectors/player.selector';
+import { setSongList, setPlaying, setCurrentIndex, setCurrentTime, setIsNew } from './store/actions/player.action';
+import { getSongList, getSongListName, getPlaying, getCurrentIndex, getCurrentTime, getIsNew } from './store/selectors/player.selector';
 
 
 
@@ -85,6 +85,13 @@ export class AppComponent implements OnInit {
     })
     this.store$.pipe(select('player'), select(getCurrentTime)).subscribe((currentTime) => {
       this.currentTime = currentTime;
+    })
+    this.store$.pipe(select('player'), select(getIsNew)).subscribe((isNew) => {
+      if(isNew){
+        this.setAudioPause();
+        this.onPlay();
+        this.store$.dispatch(setIsNew({ isNew: false }));
+      }
     })
   }
 

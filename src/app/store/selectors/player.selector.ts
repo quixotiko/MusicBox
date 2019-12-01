@@ -8,3 +8,4 @@ export const getSongList = createSelector(selectPlayerStates, (state:PlayerState
 export const getCurrentIndex = createSelector(selectPlayerStates, (state:PlayerState) => state.currentIndex);
 export const getSongListName = createSelector(selectPlayerStates, (state:PlayerState) => state.songListName);
 export const getCurrentTime = createSelector(selectPlayerStates, (state:PlayerState) => state.currentTime);
+export const getIsNew = createSelector(selectPlayerStates, (state:PlayerState) => state.isNew);
