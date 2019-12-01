@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SongsheetService } from './services/songsheet.service';
 import { Song } from './services/common.types';
 import { Store, select } from '@ngrx/store';
-import { PlayerState } from './store/reducers/player.reducer';
+import { PlayerState, playerReducer } from './store/reducers/player.reducer';
 import { setSongList } from './store/actions/player.action';
 import { getSongList } from './store/selectors/player.selector';
 
@@ -22,12 +22,9 @@ export class AppComponent implements OnInit{
     'shrink': false
   };
 
-  albumName: string;
-  artistName: string;
-  songName: string;
-  songPicUrl: string;
+  songList: Song[];
 
-  constructor(private songsheetservice: SongsheetService, private store$: Store<PlayerState>) { }
+  constructor(private songsheetservice: SongsheetService, private store$: Store<any>) { }
 
   ngOnInit() {
     window.addEventListener("wheel", (e: WheelEvent) => {
@@ -46,16 +43,16 @@ export class AppComponent implements OnInit{
         }
       }
     })
-    this.store$.pipe(select('player',getSongList)).subscribe((songList) => {
-      // this.songName = songList[0].name;
-      console.log(songList);
+    this.store$.pipe(select('player'),select(getSongList)).subscribe((songList) => {
+      // console.log(songList);
     });
     this.getDefaultPlaylist();
   }
 
   getDefaultPlaylist() {
-    this.songsheetservice.getPlayListDetail(800496969).subscribe((songList: Song[]) => {
-      this.store$.dispatch(setSongList({songList}))
+    this.songsheetservice.getPlayListDetail(1997190595).subscribe((songList: Song[]) => {
+      console.log(songList);
+      this.store$.dispatch(setSongList({songList}));
     })
   }
 }

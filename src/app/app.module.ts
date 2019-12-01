@@ -29,7 +29,9 @@ registerLocaleData(zh);
     StoreModule.forRoot({player: playerReducer}, {
       runtimeChecks: {
         strictStateImmutability: true,
-        strictActionImmutability: true
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
       }
     })
   ],
