@@ -20,11 +20,16 @@
 
 ### 效果
 
-![image](./image/01.png)
-![image](./image/02.png)
-![image](./image/03.png)
-![image](./image/04.png)
-![image](./image/05.png)
 
+
+> <div align="center"><img width="1000" height="auto" src="./image/01.png"/></div>
+
+> <div align="center"><img width="1000" height="auto" src="./image/02.png"/></div>
+
+> <div align="center"><img width="1000" height="auto" src="./image/03.png"/></div>
+
+><div align="center"><img width="250" height="auto" src="./image/04.png"/></div>
+
+> <div align="center"><img width="250" height="auto" src="./image/05.png"/></div>
 
 
