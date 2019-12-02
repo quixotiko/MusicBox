@@ -97,7 +97,7 @@ export class AppComponent implements OnInit {
   }
 
   getDefaultPlaylist() {
-    this.songsheetservice.getPlayListDetail(35871314).subscribe((songList: Song[]) => {
+    this.songsheetservice.getPlayListDetail(925007233).subscribe((songList: Song[]) => {
       console.log(songList);
       this.store$.dispatch(setSongList({ songList }));
       this.store$.dispatch(setCurrentTime({ currentTime: songList[this.currentIndex].duration }));
@@ -123,7 +123,9 @@ export class AppComponent implements OnInit {
     this.showPrevButton = true;
     if (this.isPaused) {
       this.isPaused = !this.isPaused;
-      this.audio.src = this.songList[this.currentIndex].url;
+      if(this.currentTime >= this.songList[this.currentIndex].duration){//防止歌曲播放时点击停止按钮再点击播放时重新播放音乐
+        this.audio.src = this.songList[this.currentIndex].url;
+      }
       this.setAudioPlay();
     }
     else {
