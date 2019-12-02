@@ -1,27 +1,30 @@
 # MusicBox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+ 下载网易云音乐 Node.js API service https://github.com/Binaryify/NeteaseCloudMusicApi
 
-## Development server
+> $ git clone git@github.com:Binaryify/NeteaseCloudMusicApi.git
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+> $ npm install
 
-## Code scaffolding
+运行
+> $ node app.js
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+下载本项目
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+> git clone https://github.com/quixotiko/MusicBox.git
 
-## Running unit tests
+运行
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> npm start
 
-## Running end-to-end tests
+### 效果
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![image](https://github.com/quixotiko/MusicBox/master/image/批注 2019-12-02 130125.png)
+![image](https://github.com/quixotiko/MusicBox/master/image/批注 2019-12-02 130155.png)
+![image](https://github.com/quixotiko/MusicBox/master/image/批注 2019-12-02 130223.png)
+![image](https://github.com/quixotiko/MusicBox/master/image/批注 2019-12-02 130259.png)
+![image](https://github.com/quixotiko/MusicBox/master/image/批注 2019-12-02 130323.png)
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
