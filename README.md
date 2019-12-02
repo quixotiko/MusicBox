@@ -20,11 +20,11 @@
 
 ### 效果
 
-![image](https://github.com/quixotiko/MusicBox/master/image/01.png)
-![image](https://github.com/quixotiko/MusicBox/master/image/02.png)
-![image](https://github.com/quixotiko/MusicBox/master/image/03.png)
-![image](https://github.com/quixotiko/MusicBox/master/image/04.png)
-![image](https://github.com/quixotiko/MusicBox/master/image/05.png)
+![image](./image/01.png)
+![image](./image/02.png)
+![image](./image/03.png)
+![image](./image/04.png)
+![image](./image/05.png)
 
 
 
