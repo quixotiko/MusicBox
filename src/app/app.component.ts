@@ -88,15 +88,16 @@ export class AppComponent implements OnInit {
     })
     this.store$.pipe(select('player'), select(getIsNew)).subscribe((isNew) => {
       if(isNew){
-        this.setAudioPause();
-        this.onPlay();
-        this.store$.dispatch(setIsNew({ isNew: false }));
+        this.setAudioPause();//切换到新歌单要先清除计时器
+        this.onPlay();//然后模拟用户点击播放按钮
+        this.setDotLeft();
+        this.store$.dispatch(setIsNew({ isNew: false }));//将isNew设为false，点击其他新歌单才不会出现问题
       }
     })
   }
 
   getDefaultPlaylist() {
-    this.songsheetservice.getPlayListDetail(925007233).subscribe((songList: Song[]) => {
+    this.songsheetservice.getPlayListDetail(35871314).subscribe((songList: Song[]) => {
       console.log(songList);
       this.store$.dispatch(setSongList({ songList }));
       this.store$.dispatch(setCurrentTime({ currentTime: songList[this.currentIndex].duration }));
@@ -142,6 +143,7 @@ export class AppComponent implements OnInit {
     this.store$.dispatch(setCurrentTime({ currentTime: this.songList[this.currentIndex].duration }));
     this.store$.dispatch(setPlaying({ isPaused: false }));
     this.setAudioPlay();
+    this.setDotLeft();
   }
   onPrev() {
     this.setAudioPause();
@@ -151,6 +153,7 @@ export class AppComponent implements OnInit {
     this.store$.dispatch(setCurrentTime({ currentTime: this.songList[this.currentIndex].duration }));
     this.store$.dispatch(setPlaying({ isPaused: false }));
     this.setAudioPlay();
+    this.setDotLeft();
   }
 
   setDotLeft() {

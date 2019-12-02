@@ -17,5 +17,5 @@ export type Song = {
 export type PlayLists = {
     
     playlists: any[];
-    total: number;
+    total?: number;
 }

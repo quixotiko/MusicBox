@@ -20,7 +20,7 @@ export const initialState: PlayerState = {
     isPaused: true,
     songList: [],
     currentIndex: 0,
-    songListName: '玫瑰与威士忌•蓝调女歌手精选集',
+    songListName: '耳朵里的孙燕姿',
     currentTime: 0,
     isNew: false 
 }

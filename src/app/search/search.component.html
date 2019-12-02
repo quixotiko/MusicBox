@@ -1,0 +1,11 @@
+<div class="container">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+        <input type="text" nz-input placeholder="搜索歌单" #input/>
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+        <i nz-icon nzType="search"></i>
+    </ng-template>
+    <div class="results">
+        <app-search-item *ngFor="let playlist of playlists?.playlists" [name]="playlist?.name" [id]="playlist?.id" [imgUrl]="playlist?.coverImgUrl"></app-search-item>
+    </div>
+</div>
