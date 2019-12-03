@@ -16,6 +16,8 @@
 
 运行
 
+> npm install 
+
 > npm start
 
 ### 效果
