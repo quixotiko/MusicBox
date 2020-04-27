@@ -34,5 +34,6 @@ export class SearchComponent implements OnInit {
       this.playlists = res;
     })
   }
+  
 
 }
